@@ -1,0 +1,73 @@
+package com.example.android.avengersnetwork;
+
+public class Posts
+{ private String uid,time,date,postImage,fullname,description,Profileimage;
+
+  public Posts(){}
+
+    public Posts(String uid, String time, String date, String postImage, String fullname, String description, String profileimage) {
+        this.uid = uid;
+        this.time = time;
+        this.date = date;
+        this.postImage = postImage;
+        this.fullname = fullname;
+        this.description = description;
+        Profileimage = profileimage;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getPostImage() {
+        return postImage;
+    }
+
+    public void setPostImage(String postImage) {
+        this.postImage = postImage;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getProfileimage() {
+        return Profileimage;
+    }
+
+    public void setProfileimage(String profileimage) {
+        Profileimage = profileimage;
+    }
+}

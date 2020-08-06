@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "131338716153",
+    "firebase_url": "https://avengers-network.firebaseio.com",
+    "project_id": "avengers-network",
+    "storage_bucket": "avengers-network.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131338716153:android:dd2c6bfe2f93c264b27328",
+        "android_client_info": {
+          "package_name": "com.example.android.avengersnetwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131338716153-rcuap1cac7t7r4f63ilm258m5bp4d63f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.avengersnetwork",
+            "certificate_hash": "002bbdeac96d52e02b36e9576b5e7e2d076492f1"
+          }
+        },
+        {
+          "client_id": "131338716153-0hu24pb72nqcse9trqlm5r6oheogtfg7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs_xtxnn7NjdYlm_42zoViZ6JgbWdUsJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131338716153-0hu24pb72nqcse9trqlm5r6oheogtfg7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
