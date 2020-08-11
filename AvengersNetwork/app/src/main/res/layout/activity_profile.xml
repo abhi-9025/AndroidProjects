@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorProfile"
+    tools:context=".ProfileActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/profile"
+                android:id="@+id/myProfile_pic"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile Name"
+                android:id="@+id/my_profile_full_name"
+                android:layout_below="@+id/myProfile_pic"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Name"
+                android:id="@+id/my_profile_user_name"
+                android:layout_below="@+id/my_profile_full_name"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/my_profile_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_profile_user_name"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Hey there i am using social app developed by me"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="22sp" />
+            <TextView
+                android:id="@+id/my_profile_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_profile_status"
+                android:layout_marginTop="60dp"
+                android:gravity="center_horizontal"
+                android:text="Country"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/my_profile_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_profile_country"
+                android:layout_marginTop="2dp"
+                android:gravity="center_horizontal"
+                android:text="Dob"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/my_profile_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_profile_dob"
+                android:layout_marginTop="2dp"
+                android:gravity="center_horizontal"
+                android:text="Gender"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/my_profile_relationshipstatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_profile_gender"
+                android:layout_marginTop="2dp"
+                android:gravity="center_horizontal"
+                android:text="Gender"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+
