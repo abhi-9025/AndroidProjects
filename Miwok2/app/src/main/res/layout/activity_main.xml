@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/tan_background"
+        android:orientation="vertical">
+        <TextView
+            android:background="@color/category_numbers"
+            android:text="@string/category_numbers"
+            android:id="@+id/numbers"
+            style="@style/CategoryStyle"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="@string/category_family"
+            android:id="@+id/familyMembers"
+            android:background="@color/category_family"
+            style="@style/CategoryStyle"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:background="@color/category_colors"
+            android:id="@+id/colors"
+            android:text="@string/category_colors"
+            style="@style/CategoryStyle"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:background="@color/category_phrases"
+          android:text="@string/category_phrases"
+            android:id="@+id/phrases"
+            style="@style/CategoryStyle"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
