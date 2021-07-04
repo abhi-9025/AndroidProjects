@@ -2,6 +2,8 @@ package com.example.miwok;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,29 @@ import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
+
+    private AudioManager audioManager;
+
+    AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener =
+            new AudioManager.OnAudioFocusChangeListener() {
+                public void onAudioFocusChange(int focusChange) {
+                    if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
+                        mediaPlayer.pause();
+                        mediaPlayer.seekTo(0);
+                    } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+                        mediaPlayer.pause();
+                        mediaPlayer.seekTo(0);
+                    } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN)
+                    {
+                        mediaPlayer.start();
+                    }
+                    else if (focusChange==AudioManager.AUDIOFOCUS_LOSS)
+                    {
+                        releaseMediaPlayer();
+                    }
+                }
+            };
+
     private MediaPlayer.OnCompletionListener mCompletionListener=new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mp) {
@@ -25,7 +50,10 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
-      final    ArrayList<Word> words=new ArrayList<Word>();
+        audioManager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
+
+
+        final    ArrayList<Word> words=new ArrayList<Word>();
 
         words.add(new Word("red","wetetti",R.drawable.color_red,R.raw.color_red));
         words.add(new Word("mustard yellow","chiwitta",R.drawable.color_mustard_yellow,R.raw.color_mustard_yellow));
@@ -45,9 +73,14 @@ public class ColorsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             { Word word=  words.get(position);
                releaseMediaPlayer();
-                mediaPlayer= MediaPlayer.create(ColorsActivity.this,word.getmAudioResourceId());
-                mediaPlayer.start();
-                mediaPlayer.setOnCompletionListener(mCompletionListener);
+                int result=audioManager.requestAudioFocus(mOnAudioFocusChangeListener,AudioManager.STREAM_MUSIC,AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+
+                if(result==AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+//                    audioManager.registerMediaButtonEventReceiver();
+                    mediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getmAudioResourceId());
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(mCompletionListener);
+                }
 
             }
         });
@@ -67,6 +100,8 @@ public class ColorsActivity extends AppCompatActivity {
         {
             mediaPlayer.release();
             mediaPlayer=null;
+            audioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
+
         }
     }
 }
